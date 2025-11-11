@@ -82,9 +82,7 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 
 ---
 
-## Brownie Point Features (Above Requirements)
-
-These features are not part of the base assignment but add extra polish and quality.
+## Brownie Point Features
 
 * Video thumbnail generation (video_thumbnail)
 * Video duration extraction (video_player)
