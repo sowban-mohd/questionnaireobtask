@@ -1,126 +1,104 @@
-#  Hotspot Host Onboarding – Flutter Internship Assignment
+# Hotspot Host Onboarding – Flutter Internship Assignment
 
-A Flutter application implementing a **two-step onboarding flow** for Hotspot Host applicants.
-This project includes API integration, media recording, Riverpod state management, and clean architecture.
-
----
-
-##  Features Implemented
+A Flutter application implementing a two-step onboarding flow for Hotspot Host applicants. Includes API integration, media recording, Riverpod state management, and clean architecture.
 
 ---
 
-#  1. Experience Type Selection Screen
+## Required Features Implemented
 
-##  API Integration (Dio)
+### 1. Experience Type Selection Screen
 
-* Experiences fetched using Dio.
-* Cards include:
+**API Integration (Dio)**
 
-  * Background image (`image_url`)
-  * Title text
-  * **Grayscale when unselected**, full color when selected.
+* Fetches experiences from API
+* Displays cards with:
 
-##  Multi-Selection
+  * Background image (image_url)
+  * Grayscale when unselected, full color when selected (required visual behavior)
 
-* Tap to select/deselect.
-* Multiple cards supported.
-* Selected experience IDs stored using **Riverpod**.
+**Multi-Selection**
 
-##  Description Input
+* Select/deselect cards on tap
+* Supports multiple selections
+* Selected IDs stored using Riverpod
 
-* Multi-line text field.
-* **250-character limit**.
-* Remaining characters indicator.
-* Value stored in state.
+**Description Input**
 
-##  Next Button
+* Multi-line text field
+* 250-character limit
+* Remaining character indicator
+* Value stored in Riverpod state
 
-* Logs full state.
-* Only enabled if state is not empty.
-* Navigates to **Onboarding Question Screen**.
+**Next Button**
 
----
-
-#  2. Onboarding Question Screen
-
-##  Long Answer Input
-
-* Multi-line text field.
-* **600-character limit**.
-
-##  Audio Recording (audio_waveforms)
-
-* Live waveform during recording.
-* Cancel option.
-* Delete option.
-* Audio button automatically hides after recording.
-
-##  Video Recording (camera)
-
-* Record videos inside app.
-* Thumbnail generated using `video_thumbnail`.
-* Duration extracted using `video_player`.
-* Delete recorded video.
-* Video button hides after recording.
-
-##  Dynamic Layout Adjustments
-
-* Recording buttons disappear once assets exist.
-* Keyboard-safe UI.
+* Logs complete state
+* Enabled only when required fields are filled
+* Navigates to Onboarding Question Screen
 
 ---
 
-#  State Management – Riverpod
+### 2. Onboarding Question Screen
 
-* All UI state handled via `Notifier` and providers.
-* Predictable, reactive updates.
-* No UI-level mutable state.
+**Long Answer Input**
 
----
+* Multi-line text input
+* 600-character limit
 
-#  Networking – Dio
+**Audio Recording (Required)**
 
-* Used for experience API calls.
-* Full error handling.
-* Logic isolated inside data layer.
+* Audio recording using audio_waveforms
+* Displays live waveform
+* Cancel recording
+* Delete recording
 
----
+**Video Recording (Required)**
 
-#  UI / UX
+* Video recording using camera
+* Delete recorded video
 
-* Clean modern layout.
-* Matches Figma spacing/structure.
-* Responsive.
-* Keyboard-safe.
+**State / UI Behavior**
 
----
-
-# Packages Used
-
-| Feature          | Package          |
-| ---------------- | ---------------- |
-| API Requests     | dio              |
-| State Management | flutter_riverpod |
-| Audio Recording  | audio_waveforms  |
-| Video Recording  | camera           |
-| Video Thumbnail  | video_thumbnail  |
-| Video Duration   | video_player     |
+* Recording buttons hidden once audio/video is available
+* Keyboard-safe layout
 
 ---
 
-#  Optional Features Not Implemented
+## State Management – Riverpod
+
+* All UI state managed with Notifier and Providers
+* No local mutable widget state
+
+## Networking – Dio
+
+* Experience API integration
+* Error handling
+* Clean data layer separation
+
+## UI/UX
+
+* Clean, modern, responsive layout
+* Matches Figma structure
+* Keyboard-safe
+
+---
+
+## Brownie Point Features (Above Requirements)
+
+These features are not part of the base assignment but add extra polish and quality.
+
+* Video thumbnail generation (video_thumbnail)
+* Video duration extraction (video_player)
+* Auto-hide audio button after recording
+* Auto-hide video button after recording
+* Dynamic layout adjustments based on recorded media
+* Grayscale-to-color transition for experience cards
+* Full clean architecture structure
+* Strong input validation and button enablement logic
+
+---
+
+## Optional Features Not Implemented
 
 * Audio playback
 * Video playback
-* Animations (card slide-to-top / next button width animation)
-
----
-
-#  Running the Project
-
-```
-flutter pub get
-flutter run
-```
-
-> Ensure microphone and camera permissions are enabled.
+* Minor UI animations such as card slide-up or expanding Next button
