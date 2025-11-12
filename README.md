@@ -14,7 +14,7 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 * Displays cards with:
 
   * Background image (image_url)
-  * Grayscale when unselected, full color when selected (required visual behavior)
+  * Grayscale when unselected, full color when selected
 
 **Multi-Selection**
 
@@ -44,14 +44,14 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 * Multi-line text input
 * 600-character limit
 
-**Audio Recording (Required)**
+**Audio Recording**
 
 * Audio recording using audio_waveforms
 * Displays live waveform
 * Cancel recording
 * Delete recording
 
-**Video Recording (Required)**
+**Video Recording**
 
 * Video recording using camera
 * Delete recorded video
@@ -66,7 +66,6 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 ## State Management – Riverpod
 
 * All UI state managed with Notifier and Providers
-* No local mutable widget state
 
 ## Networking – Dio
 
