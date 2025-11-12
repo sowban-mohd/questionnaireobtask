@@ -84,6 +84,7 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 
 ## Brownie Point Features
 
+* Audio playback
 * Video thumbnail generation (video_thumbnail)
 * Video duration extraction (video_player)
 * Auto-hide audio button after recording
@@ -97,6 +98,5 @@ A Flutter application implementing a two-step onboarding flow for Hotspot Host a
 
 ## Optional Features Not Implemented
 
-* Audio playback
 * Video playback
 * Minor UI animations such as card slide-up or expanding Next button
