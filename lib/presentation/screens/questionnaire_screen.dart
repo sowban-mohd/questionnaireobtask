@@ -72,7 +72,6 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
     super.dispose();
   }
 
-
   Future<void> startRecording() async {
     await _recorderController.record();
   }
@@ -125,7 +124,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
         state.isTextFieldNotEmpty;
 
     return QuestionnaireLayout(
-      onBackButton: (){
+      onBackButton: () {
         Navigator.of(context).pop();
       },
       body: SafeArea(
@@ -189,7 +188,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
 
                           const SizedBox(height: 12),
 
-                          //Audio recording, Playback container
+                          //Audio recording container
                           if (isAudioRecording)
                             Container(
                               height: 132,
@@ -294,6 +293,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
                               ),
                             ),
 
+                          //Video recorded container
                           if (currentVideo != null)
                             Container(
                               height: 64,
@@ -373,6 +373,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
                               ),
                             ),
 
+                          //Audio playback container
                           if (currentAudioPath != null)
                             Container(
                               height: 132,
@@ -503,10 +504,12 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
 
                           const SizedBox(height: 16),
 
+                          //Bottom buttons
                           Row(
                             children: [
                               if (currentAudioPath == null &&
                                   currentVideo == null) ...[
+                                //Audio & video record buttons
                                 Container(
                                   width: 112,
                                   height: 56,
@@ -560,9 +563,8 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
                                                   )
                                                 : null,
                                             child: Center(
-                                              child:  SvgPicture.asset(
-                                                  "assets/images/icons/audio_icon.svg",
-
+                                              child: SvgPicture.asset(
+                                                "assets/images/icons/audio_icon.svg",
                                               ),
                                             ),
                                           ),
@@ -583,7 +585,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
                                         child: Center(
                                           child: InkWell(
                                             onTap: () {
-                                              if(isAudioRecording) {
+                                              if (!isAudioRecording) {
                                                 Navigator.of(context).push(
                                                   MaterialPageRoute(
                                                     builder: (context) =>
@@ -610,6 +612,7 @@ class _QuestionnaireScreenState extends ConsumerState<QuestionnaireScreen> {
                                 const SizedBox(width: 8),
                               ],
 
+                              //Next button
                               Expanded(
                                 child: NavigationButton(
                                   opacity: canNavigateToNext ? 1.0 : 0.3,
